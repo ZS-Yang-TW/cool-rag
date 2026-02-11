@@ -1,0 +1,22 @@
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  min-height: 400px;
+}
+
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .message-list {
+    padding: 1rem;
+  }
+
+  .messages-container {
+    gap: 1rem;
+  }
+}

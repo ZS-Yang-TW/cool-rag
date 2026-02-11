@@ -1,0 +1,258 @@
+.document-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.document-viewer-modal {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.document-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 24px;
+  border-bottom: 2px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 12px 12px 0 0;
+}
+
+.document-info h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #1f2937;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.document-meta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.meta-item {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-indexed {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-modified {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-new {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-deleted {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-unknown {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.btn-close {
+  padding: 8px 16px;
+  background: #6b7280;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-close:hover {
+  background: #4b5563;
+}
+
+.document-viewer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+/* Markdown styling */
+.document-viewer-content h1 {
+  font-size: 28px;
+  color: #111827;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.document-viewer-content h1:first-child {
+  margin-top: 0;
+}
+
+.document-viewer-content h2 {
+  font-size: 24px;
+  color: #1f2937;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.document-viewer-content h3 {
+  font-size: 20px;
+  color: #374151;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.document-viewer-content h4 {
+  font-size: 18px;
+  color: #4b5563;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.document-viewer-content p {
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #374151;
+}
+
+.document-viewer-content ul,
+.document-viewer-content ol {
+  margin-bottom: 16px;
+  padding-left: 28px;
+  color: #374151;
+}
+
+.document-viewer-content li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.document-viewer-content code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  color: #dc2626;
+}
+
+.document-viewer-content pre {
+  background: #1f2937;
+  color: #f3f4f6;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.document-viewer-content pre code {
+  background: none;
+  padding: 0;
+  color: #f3f4f6;
+  font-size: 13px;
+}
+
+.document-viewer-content blockquote {
+  border-left: 4px solid #3b82f6;
+  margin: 16px 0;
+  padding-left: 16px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.document-viewer-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+.document-viewer-content table th,
+.document-viewer-content table td {
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.document-viewer-content table th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+}
+
+.document-viewer-content table td {
+  color: #4b5563;
+}
+
+.document-viewer-content a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.document-viewer-content a:hover {
+  text-decoration: underline;
+}
+
+.document-viewer-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.document-viewer-content hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 24px 0;
+}
+
+.document-viewer-loading,
+.document-viewer-error {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 16px;
+}
+
+.document-viewer-loading {
+  color: #6b7280;
+}
+
+.document-viewer-error {
+  color: #dc2626;
+}

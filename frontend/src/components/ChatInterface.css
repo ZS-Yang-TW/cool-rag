@@ -1,0 +1,163 @@
+.chat-interface {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.welcome-message {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.welcome-message h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.welcome-message>p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.example-questions {
+  width: 100%;
+  max-width: 600px;
+}
+
+.example-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.example-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.example-button {
+  background: var(--background);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.example-button:hover {
+  border-color: var(--primary-color);
+  background: rgba(37, 99, 235, 0.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.chat-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+.stop-button {
+  background: var(--error);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.stop-button:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.clear-chat-button {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.clear-chat-button:hover {
+  background: var(--error);
+  color: white;
+  border-color: var(--error);
+}
+
+@media (max-width: 768px) {
+  .chat-interface {
+    padding: 1rem 0.5rem;
+  }
+
+  .welcome-message {
+    padding: 2rem 1rem;
+  }
+
+  .welcome-message h2 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-message>p {
+    font-size: 1rem;
+  }
+
+  .chat-actions {
+    padding: 0.5rem;
+  }
+
+  .stop-button,
+  .clear-chat-button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

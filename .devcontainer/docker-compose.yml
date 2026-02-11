@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: ${USER:-vscode}
+        USER_UID: 1000
+        USER_GID: 1000
+        TimeZone: Asia/Taipei
+    image: 'cool-rag/development:latest'
+    container_name: local-dev-cool-rag
+    env_file:
+      - ../.env
+    volumes:
+      - ..:/workspace
+      - ../documents:/app/documents
+      - vscode-extensions:/home/${USER:-vscode}/.vscode-server/extensions
+      - vscode-extensions:/home/${USER:-vscode}/.vscode-server-insiders/extensions
+      - ~/.gitconfig:/home/${USER:-vscode}/.gitconfig:ro
+      - ~/.npmrc:/home/${USER:-vscode}/.npmrc:ro
+    networks:
+      - local-infra
+    ports:
+      - "8000:8000"
+      - "3000:3000"
+    command: sleep infinity
+
+volumes:
+  vscode-extensions:
+    name: cool-rag-vscode-extensions
+
+networks:
+  local-infra:
+    external: true
+    name: local-infra-network

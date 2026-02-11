@@ -1,0 +1,91 @@
+.message-input-form {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.input-container {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.message-textarea {
+  flex: 1;
+  min-height: 44px;
+  max-height: 120px;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: none;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+}
+
+.message-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.message-textarea:disabled {
+  background: var(--background);
+  cursor: not-allowed;
+}
+
+.send-button {
+  width: 44px;
+  height: 44px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.send-button:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.send-button:disabled {
+  background: var(--border);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.send-icon {
+  font-size: 1.25rem;
+}
+
+.loading-spinner {
+  font-size: 1.25rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .message-input-form {
+    padding: 1rem;
+  }
+
+  .message-textarea {
+    font-size: 0.95rem;
+  }
+}
