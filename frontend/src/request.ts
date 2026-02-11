@@ -1,13 +1,13 @@
 import axios from 'axios';
-
-const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const baseURL = import.meta.env.VITE_API_URL;
 
 let config = {};
 
 if (baseURL !== '') {
   config = {
     baseURL,
-    withCredentials: true,
+    // TODO: Set withCredentials to true if backend requires cookies for authentication
+    withCredentials: false,
   };
 }
 

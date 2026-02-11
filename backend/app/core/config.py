@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     vllm_reasoning_effort: str = "medium"
 
     # Database Configuration
-    db_host: str = "local-infra-postgres"
+    db_host: str
     db_port: int = 5432
     db_username: str
     db_password: str
@@ -34,7 +34,7 @@ class Settings(BaseSettings):
     environment: str = "development"
 
     # CORS Configuration
-    enable_cors: bool = True
+    enable_cors: bool
     cors_origins: list[str] = ["http://localhost:3000"]
 
     # Retrieval Configuration

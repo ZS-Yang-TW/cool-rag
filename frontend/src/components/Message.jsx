@@ -81,7 +81,7 @@ function Message({ message, onEditAndResend }) {
                 components={{
                   img: ({ node, ...props }) => {
                     // Convert relative image URLs to absolute backend URLs
-                    const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+                    const apiBaseUrl = import.meta.env.VITE_API_URL;
                     const src = props.src?.startsWith('/images/') 
                       ? `${apiBaseUrl}${props.src}`
                       : props.src;
