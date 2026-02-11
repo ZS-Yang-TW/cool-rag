@@ -1,65 +1,27 @@
 {
-  "name": "cool-rag",
-  "dockerComposeFile": [
-    "docker-compose.yml"
-  ],
-  "service": "devcontainer",
-  "workspaceFolder": "/workspace",
-  "shutdownAction": "stopCompose",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "github.copilot",
-        "github.copilot-chat",
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-python.black-formatter",
-        "charliermarsh.ruff",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "ms-azuretools.vscode-docker",
-        "streetsidesoftware.code-spell-checker",
-        "mikestead.dotenv",
-        "formulahendry.auto-rename-tag",
-        "gruntfuggly.todo-tree"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "python.analysis.typeCheckingMode": "basic",
-        "python.formatting.provider": "black",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-          "source.organizeImports": "explicit"
-        },
-        "[python]": {
-          "editor.defaultFormatter": "ms-python.black-formatter"
-        },
-        "[javascript]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "[typescript]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "[json]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "cSpell.enabled": true
-      }
-    }
-  },
-  "forwardPorts": [
-    8000,
-    3000
-  ],
-  "portsAttributes": {
-    "8000": {
-      "label": "Backend API",
-      "onAutoForward": "notify"
-    },
-    "3000": {
-      "label": "Frontend",
-      "onAutoForward": "openBrowser"
-    }
-  },
-  "postCreateCommand": "python -m pip install --upgrade pip && python -m pip install -r backend/requirements.txt && cd frontend && npm install"
+	"name": "cool-rag",
+	"dockerComposeFile": [
+		"docker-compose.yml",
+		"docker-compose.override.yml"
+	],
+	"service": "application",
+	"workspaceFolder": "/usr/workspace",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"#terminal.integrated.profiles.linux#": "/bin/bash",
+				"cSpell.enabled": true
+			},
+			"extensions": [
+				"mikestead.dotenv",
+				"streetsidesoftware.code-spell-checker",
+				"formulahendry.auto-rename-tag",
+				"michelemelluso.code-beautifier",
+				"wmaurer.change-case",
+				"vivaxy.vscode-conventional-commits",
+				"gruntfuggly.todo-tree"
+			]
+		}
+	}
 }

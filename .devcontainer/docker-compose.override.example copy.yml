@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  application:
+    container_name: local-dev-cool-rag
+
+    build:
+      args:
+        USER_UID: 1001
+        USER_GID: 1001
+
+    environment:
+      NODE_OPTIONS: "--max_old_space_size=8192"
+
+    volumes:
+      - ~/.gitconfig:/home/${USER}/.gitconfig:ro
+      - ~/.npmrc:/home/${USER}/.npmrc:ro
+
+    networks:
+      - local-infra
+
+    ports:
+      - "22314:8000"
+      - "22315:3000"
+
+networks:
+  local-infra:
+    external: true
+    name: local-infra-network

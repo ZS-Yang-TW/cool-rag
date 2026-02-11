@@ -65,7 +65,10 @@ class Settings(BaseSettings):
         """Database URL for SQLAlchemy"""
         return f"postgresql://{self.db_username}:{self.db_password}@{self.db_host}:{self.db_port}/{self.db_database}"
 
-    model_config = SettingsConfigDict(env_file=".env", case_sensitive=False)
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        case_sensitive=False,
+    )
 
 
 settings = Settings()  # type: ignore[call-arg]
